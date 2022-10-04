@@ -1,0 +1,30 @@
+---
+- name: Create empty directory for sys-dig inspect
+  ansible.builtin.file:
+    path: /opt/sysdig_inspect
+    state: directory
+
+- name: Donwload sys-dig-inspect
+  ansible.builtin.get_url:
+    url: "{{ app.link }}"
+    dest: /opt/sysdig_inspect
+
+- name: Unarchive sys-dig-inspect
+  unarchive:
+    src: "/opt/sysdig_inspect/{{ app.version }}.tar.gz"
+    dest: /opt/sysdig_inspect
+    remote_src: yes
+
+- name: Delete the zip file
+  file:
+    path: "/opt/sysdig_inspect/{{ app.version }}.tar.gz"
+    state: absent
+
+- name: Run command to install sys-dig-inspect
+  shell:
+    chdir: "/opt/sysdig_inspect/{{ app.version }}/scripts"
+    cmd: bash install
+
+
+
+

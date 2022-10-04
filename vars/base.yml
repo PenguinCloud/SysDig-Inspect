@@ -2,3 +2,5 @@ run:
   user: ptg-user
 app:
   title: "{{ lookup('ansible.builtin.env', 'APP_TILE') }}"
+  link: "{{ lookup('ansible.builtin.env', 'SYS_DIG_INSPECT_LINK') }}"
+  version: "{{ lookup('ansible.builtin.env', 'SYSDIG_INSPECT_VERSION') }}"

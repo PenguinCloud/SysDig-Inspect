@@ -11,7 +11,9 @@ WORKDIR /opt/manager
 RUN apt update && apt dist-upgrade -y && apt auto-remove -y && apt clean -y
 
 # PUT YER ARGS in here
-ARG APP_TITLE="PTGAPP" # Change this to actual title for Default
+ARG APP_TITLE="Sys-Dig_Inspect"
+ARG SYS_DIG_INSPECT_LINK="https://github.com/draios/sysdig-inspect/archive/refs/tags/v0.7.2.tar.gz"
+ARG SYSDIG_INSPECT_VERSION="sysdig-inspect-0.7.2"
 
 # BUILD IT!
 RUN ansible-playbook build.yml -c local
@@ -19,8 +21,10 @@ RUN ansible-playbook build.yml -c local
 # PUT YER ENVS in here
 # ENV FOO="BAR"
 
+EXPOSE 8080
+
 # Switch to non-root user
-USER ptg-user
+# USER ptg-user
 
 # Entrypoint time (aka runtime)
 ENTRYPOINT ["/bin/bash","/opt/manager/entrypoint.sh"]
