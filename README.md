@@ -1,6 +1,11 @@
-# Project Overview
-<< This is a template. Copy this templated repository to make new projects. Once done, add a 1 paragraph introduction / elevator speech about your project.
->>
+# SysDig_Inspect 
+
+>> Sysdig Inspect is a powerful opensource interface for container troubleshooting and security investigation
+>Inspect's user interface is designed to intuitively navigate the data-dense sysdig captures that contain granular system, network, and application activity of a Linux system. 
+> Sysdig Inspect helps you understand trends, correlate metrics and find the needle in the haystack. 
+> It comes packed with features designed to support both performance and security investigations, with deep container introspection. 
+> To use Sysdig Inspect, you need capture files collected on Linux with sysdig.
+
 # Why this image vs others
 ## Built in self testing and healing
 All PTG builds have unit and dynamic tests as part of the build of their images, as well as during runtime to ensure the system keeps running as expected. If the system falls out of bounds of the test, the images have some self healing capabilities fix common minor problems.
