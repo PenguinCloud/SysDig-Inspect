@@ -1,0 +1,5 @@
+---
+- name: Run command to install sys-dig-inspect and run it
+  shell:
+    chdir: "/opt/sysdig_inspect/{{ app.version }}/scripts"
+    cmd: bash install

@@ -20,10 +20,13 @@
     path: "/opt/sysdig_inspect/{{ app.version }}.tar.gz"
     state: absent
 
-- name: Run command to install sys-dig-inspect
-  shell:
-    chdir: "/opt/sysdig_inspect/{{ app.version }}/scripts"
-    cmd: bash install
+- name: Change folder permissions for sysdig_inspect
+  ansible.builtin.file:
+    path: "/opt/sysdig_inspect/{{ app.version }}"
+    state: directory
+    recurse: yes
+    owner: "{{ run.user }}"
+    group: "{{ run.user }}"
 
 
 
