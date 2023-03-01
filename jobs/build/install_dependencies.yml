@@ -10,9 +10,5 @@
       - rpm
       - zip
       - unzip
-      - npm
-      - nodejs
-      - nginx-full
-      - php-fpm
     state: present
     update_cache: yes

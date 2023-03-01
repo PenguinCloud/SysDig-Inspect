@@ -1,0 +1,9 @@
+---
+- name: Install nvm
+  shell: curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+#- name: Run command to log out and back into the entry
+#  shell: source ~/.bashrc
+
+#- name: Install nodejs
+#  shell: nvm install 10.20

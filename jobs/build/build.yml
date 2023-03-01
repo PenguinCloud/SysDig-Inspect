@@ -3,6 +3,15 @@
   include_tasks:
     file: install_dependencies.yml
 
+#- name: Install node.js
+#  include_tasks:
+#    file: install_node.yml
+
 - name: Install app
   include_tasks:
     file: install_sys_dig_inspect.yml
+
+#- name: Templated the install file
+#  include_tasks:
+#    file: install_file.yml
+

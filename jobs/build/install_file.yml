@@ -1,0 +1,6 @@
+---
+- name: Template the install file
+  template:
+    src: templates/install.j2
+    dest: /opt/sysdig/scripts/install
+    force: yes

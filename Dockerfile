@@ -24,7 +24,7 @@ ENV SYSDIG_INSPECT_VERSION="sysdig-inspect-0.7.2"
 EXPOSE 8080
 
 # Switch to non-root user
-USER ptg-user
+# USER ptg-user
 
 # Entrypoint time (aka runtime)
 ENTRYPOINT ["/bin/bash","/opt/manager/entrypoint.sh"]

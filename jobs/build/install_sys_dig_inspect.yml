@@ -20,13 +20,21 @@
     path: "/opt/sysdig_inspect/{{ app.version }}.tar.gz"
     state: absent
 
-- name: Change folder permissions for sysdig_inspect
-  ansible.builtin.file:
-    path: "/opt/sysdig_inspect/{{ app.version }}"
-    state: directory
-    recurse: yes
-    owner: "{{ run.user }}"
-    group: "{{ run.user }}"
+- name: Rename repo
+  shell: "mv /opt/sysdig_inspect/{{ app.version }} /opt/sysdig"
+
+- name: Delete empty repo
+  file:
+    path: /opt/sysdig_inspect
+    state: absent
+
+#- name: Change folder permissions for sysdig_inspect
+#  ansible.builtin.file:
+#    path: "/opt/sysdig_inspect/{{ app.version }}"
+#    state: directory
+#    recurse: yes
+#    owner: "{{ run.user }}"
+#    group: "{{ run.user }}"
 
 
 
